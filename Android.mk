@@ -17,6 +17,21 @@
 LOCAL_PATH := $(call my-dir)
 
 #
+# Use Prebuilt apk
+#
+include $(CLEAR_VARS)
+LOCAL_MODULE := SlimLauncher-Prebuilt
+LOCAL_SRC_FILES := prebuilt/SlimLauncher.apk
+LOCAL_MODULE_SUFFIX := .apk
+LOCAL_MODULE_CLASS := APPS
+LOCAL_CERTIFICATE := PRESIGNED
+LOCAL_MODULE_PATH := $(TARGET_OUT)/app
+LOCAL_MODULE_TAGS := optional
+LOCAL_OVERRIDES_PACKAGES := Home Launcher2
+LOCAL_PRIVILEGED_MODULE := true
+include $(BUILD_PREBUILT)
+
+#
 # Build app code.
 #
 include $(CLEAR_VARS)
